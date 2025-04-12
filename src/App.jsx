@@ -71,6 +71,19 @@ export default function App() {
 
           <div className="flex flex-col md:flex-row items-center justify-between max-w-5xl mx-auto gap-12">
             {steps.map((step, index) => (
+              <React.Fragment key={index}>
+                <div className={`flex flex-col items-center text-center rounded-xl shadow-md p-6 w-44 ${stepColors[index]}`}>
+                  <div className="text-2xl font-bold text-sky-800 mb-2">{index + 1}</div>
+                  <div className="text-4xl">{step.icon}</div>
+                  <p className="mt-2 font-semibold text-sky-800">{step.label}</p>
+                </div>
+                {index < steps.length - 1 && (
+                  <div className="hidden md:flex items-center justify-center text-3xl text-sky-400">
+                    <span className="mx-2">→</span>
+                  </div>
+                )}
+              </React.Fragment>
+            ))}
               <div key={index} className={`flex flex-col items-center text-center rounded-xl shadow-md p-6 w-40 ${stepColors[index]}`}>
                 <div className="text-4xl">{step.icon}</div>
                 <p className="mt-2 font-semibold text-sky-800">{step.label}</p>
