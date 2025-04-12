@@ -20,7 +20,7 @@ export default function App() {
 
   return (
     <>
-      <h1 className="text-5xl font-poetic text-sky-700 z-30 animate-fade-up text-center mt-10">
+      <h1 className="text-5xl font-poetic text-sky-700 z-30 animate-fade-up text-center pt-12 leading-[1.2]">
         Capsy
       </h1>
 
@@ -89,7 +89,7 @@ export default function App() {
         </section>
 
         {/* Formulaire en bas */}
-        <div className="w-full max-w-md bg-white/60 border border-white/40 backdrop-blur-md shadow-lg backdrop-blur-md shadow-lg rounded-xl p-6 mt-16 z-20">
+        <div className="w-full max-w-md bg-white/30 backdrop-blur-md shadow-lg rounded-xl p-6 mt-16 z-20">
           {submitted ? (
             <p className="text-green-600 font-semibold">
               Merci ! Vous serez prévenu au lancement 🎉
