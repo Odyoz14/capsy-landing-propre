@@ -20,9 +20,11 @@ export default function App() {
 
   return (
     <>
-      <h1 className="text-5xl font-poetic text-sky-700 z-30 animate-fade-up text-center pt-12 leading-[1.2]">
-        Capsy
-      </h1>
+      <div className="relative w-full h-32 flex items-center justify-center z-30">
+  <h1 className="text-5xl font-poetic text-sky-700 animate-fade-up">
+    Capsy
+  </h1>
+</div>
 
       <div className="relative overflow-hidden bg-gradient-to-b from-sky-200 to-white min-h-screen flex flex-col items-center justify-start text-center pt-40 pb-10 px-4">
         {/* Nuages flottants */}
