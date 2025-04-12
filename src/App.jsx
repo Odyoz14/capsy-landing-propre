@@ -21,7 +21,7 @@ export default function App() {
   return (
     <>
       <div className="relative w-full h-32 flex items-center justify-center z-30">
-  <h1 className="text-5xl font-poetic text-sky-800 animate-fade-up">
+  <h1 className="text-6xl font-poetic text-sky-800 animate-fade-up">
     Capsy
   </h1>
 </div>
