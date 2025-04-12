@@ -20,7 +20,7 @@ export default function App() {
 
   return (
     <>
-      <h1 className="fixed top-6 left-1/2 transform -translate-x-1/2 text-5xl font-poetic text-sky-700 z-30 animate-fade-up">
+      <h1 className="text-5xl font-poetic text-sky-700 z-30 animate-fade-up text-center mt-10">
         Capsy
       </h1>
 
