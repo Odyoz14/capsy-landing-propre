@@ -71,6 +71,36 @@ export default function App() {
           )}
         </div>
       </div>
+      {/* SECTION ÉTAPES */}
+      <section className="w-full bg-white py-16 px-4 mt-20 z-20">
+        <h2 className="text-3xl font-poetic text-sky-700 text-center mb-10 animate-fade-up">
+          Comment fonctionne Capsy ?
+        </h2>
+
+        <div className="flex flex-col md:flex-row items-center justify-between max-w-5xl mx-auto gap-12">
+          <div className="flex flex-col items-center text-center">
+            <div className="text-4xl">👤</div>
+            <p className="mt-2 font-semibold text-sky-800">Créer un compte</p>
+          </div>
+          <div className="flex flex-col items-center text-center">
+            <div className="text-4xl">✍️</div>
+            <p className="mt-2 font-semibold text-sky-800">Créer une capsule</p>
+          </div>
+          <div className="flex flex-col items-center text-center">
+            <div className="text-4xl">📅</div>
+            <p className="mt-2 font-semibold text-sky-800">Choisir une date</p>
+          </div>
+          <div className="flex flex-col items-center text-center">
+            <div className="text-4xl">🔒</div>
+            <p className="mt-2 font-semibold text-sky-800">Fermer la capsule</p>
+          </div>
+          <div className="flex flex-col items-center text-center">
+            <div className="text-4xl">⏳</div>
+            <p className="mt-2 font-semibold text-sky-800">Ouvrir plus tard</p>
+          </div>
+        </div>
+      </section>
+
     </>
   )
 }
