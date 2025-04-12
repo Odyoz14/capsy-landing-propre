@@ -64,7 +64,7 @@ export default function App() {
         </h2>
 
         {/* SECTION ÉTAPES */}
-        <section className="w-full bg-white py-16 px-4 mt-6 z-20">
+        <section className="w-full bg-transparent py-16 px-4 mt-6 z-20">
           <h2 className="text-3xl font-poetic text-sky-700 text-center mb-10 animate-fade-up">
             Comment fonctionne Capsy ?
           </h2>
@@ -84,11 +84,12 @@ export default function App() {
                 )}
               </React.Fragment>
             ))}
+              
           </div>
         </section>
 
         {/* Formulaire en bas */}
-        <div className="w-full max-w-md bg-white shadow-lg rounded-xl p-6 mt-16 z-20">
+        <div className="w-full max-w-md bg-white/30 backdrop-blur-md shadow-lg rounded-xl p-6 mt-16 z-20">
           {submitted ? (
             <p className="text-green-600 font-semibold">
               Merci ! Vous serez prévenu au lancement 🎉
