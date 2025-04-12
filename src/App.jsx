@@ -84,11 +84,6 @@ export default function App() {
                 )}
               </React.Fragment>
             ))}
-              <div key={index} className={`flex flex-col items-center text-center rounded-xl shadow-md p-6 w-40 ${stepColors[index]}`}>
-                <div className="text-4xl">{step.icon}</div>
-                <p className="mt-2 font-semibold text-sky-800">{step.label}</p>
-              </div>
-            ))}
           </div>
         </section>
 
