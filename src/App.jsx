@@ -25,6 +25,25 @@ export default function App() {
       </h1>
 
       <div className="relative overflow-hidden bg-gradient-to-b from-sky-200 to-white min-h-screen flex flex-col items-center justify-start text-center pt-40 pb-10 px-4">
+
+{/* Capsules flottantes suspendues */}
+{['top-[15%]', 'top-[45%]'].map((top, i) => (
+  <img
+    key={`left-${i}`}
+    src="/assets/capsule-floating.png"
+    alt="Capsule flottante gauche"
+    className={`hidden md:block fixed left-8 ${top} h-28 z-10 animate-floating`}
+  />
+))}
+{['top-[25%]', 'top-[60%]'].map((top, i) => (
+  <img
+    key={`right-${i}`}
+    src="/assets/capsule-floating.png"
+    alt="Capsule flottante droite"
+    className={`hidden md:block fixed right-8 ${top} h-28 z-10 animate-floating`}
+  />
+))}
+
         {/* Nuages flottants */}
         <div className="floating-clouds fixed top-0 left-0 w-full h-full pointer-events-none z-0">
           {[...Array(4)].map((_, i) => (
