@@ -20,35 +20,11 @@ export default function App() {
 
   return (
     <>
-      <h1 className="text-5xl font-poetic text-sky-700 z-30 animate-fade-up text-center pt-12 leading-[1.2]">
+      <h1 className="fixed top-6 left-1/2 transform -translate-x-1/2 text-5xl font-poetic text-sky-700 z-30 animate-fade-up">
         Capsy
       </h1>
 
       <div className="relative overflow-hidden bg-gradient-to-b from-sky-200 to-white min-h-screen flex flex-col items-center justify-start text-center pt-40 pb-10 px-4">
-
-      {/* Capsules flottantes suspendues */}
-      <div className="fixed top-0 left-0 h-full w-full pointer-events-none z-10">
-        {/* Capsule gauche */}
-        <div className="absolute top-40 left-[-40px] flex flex-col items-center animate-float-slow">
-          <div className="h-40 w-px bg-gray-300 opacity-50"></div>
-          <img
-            src="/capsule.png"
-            alt="Capsule flottante"
-            className="w-16 h-16 object-contain drop-shadow-md"
-          />
-        </div>
-
-        {/* Capsule droite */}
-        <div className="absolute top-64 right-[-40px] flex flex-col items-center animate-float-slow">
-          <div className="h-40 w-px bg-gray-300 opacity-50"></div>
-          <img
-            src="/capsule.png"
-            alt="Capsule flottante"
-            className="w-16 h-16 object-contain drop-shadow-md"
-          />
-        </div>
-      </div>
-
         {/* Nuages flottants */}
         <div className="floating-clouds fixed top-0 left-0 w-full h-full pointer-events-none z-0">
           {[...Array(4)].map((_, i) => (
