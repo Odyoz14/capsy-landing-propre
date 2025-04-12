@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 export default function App() {
-  const stepColors = ['bg-sky-100', 'bg-pink-100', 'bg-violet-100', 'bg-green-100', 'bg-yellow-100']
+  const stepColors = ['bg-capsy-blue/30', 'bg-capsy-pink/30', 'bg-capsy-lav/30', 'bg-capsy-gray/30', 'bg-white/30']
   const steps = [
     { icon: '👤', label: 'Créer un compte' },
     { icon: '✍️', label: 'Créer une capsule' },
@@ -20,7 +20,7 @@ export default function App() {
 
   return (
     <>
-      <h1 className="fixed top-6 left-1/2 transform -translate-x-1/2 text-5xl font-poetic text-sky-700 z-30 animate-fade-up">
+      <h1 className="fixed top-6 left-1/2 transform -translate-x-1/2 text-5xl font-poetic text-capsy-blue font-poetic z-30 animate-fade-up">
         Capsy
       </h1>
 
@@ -59,13 +59,13 @@ export default function App() {
         </div>
 
         {/* Slogan */}
-        <h2 className="text-4xl font-bold text-sky-700 mb-12 z-20">
+        <h2 className="text-4xl font-semibold font-body text-capsy-blue font-poetic mb-12 z-20">
           Voyagez dans le temps avec vos souvenirs
         </h2>
 
         {/* SECTION ÉTAPES */}
         <section className="w-full bg-transparent py-16 px-4 mt-6 z-20">
-          <h2 className="text-3xl font-poetic text-sky-700 text-center mb-10 animate-fade-up">
+          <h2 className="text-3xl font-poetic text-capsy-blue font-poetic text-center mb-10 animate-fade-up">
             Comment fonctionne Capsy ?
           </h2>
 
@@ -73,12 +73,12 @@ export default function App() {
             {steps.map((step, index) => (
               <React.Fragment key={index}>
                 <div className={`flex flex-col items-center text-center rounded-xl shadow-md p-6 w-44 ${stepColors[index]}`}>
-                  <div className="text-2xl font-bold text-sky-800 mb-2">{index + 1}</div>
+                  <div className="text-2xl font-semibold font-body text-capsy-gray font-body mb-2">{index + 1}</div>
                   <div className="text-4xl">{step.icon}</div>
-                  <p className="mt-2 font-semibold text-sky-800">{step.label}</p>
+                  <p className="mt-2 font-semibold text-capsy-gray font-body">{step.label}</p>
                 </div>
                 {index < steps.length - 1 && (
-                  <div className="hidden md:flex items-center justify-center text-3xl text-sky-400">
+                  <div className="hidden md:flex items-center justify-center text-3xl text-capsy-lav">
                     <span className="mx-2">→</span>
                   </div>
                 )}
