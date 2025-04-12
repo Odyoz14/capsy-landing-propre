@@ -61,14 +61,17 @@ export default function App() {
           </h2>
 
           <div className="flex flex-col md:flex-row items-center justify-between max-w-5xl mx-auto gap-12">
-            {[
+            const stepColors = ['bg-sky-100', 'bg-pink-100', 'bg-violet-100', 'bg-green-100', 'bg-yellow-100'];
+            const steps = [
               { icon: '👤', label: 'Créer un compte' },
               { icon: '✍️', label: 'Créer une capsule' },
               { icon: '📅', label: 'Choisir une date' },
               { icon: '🔒', label: 'Fermer la capsule' },
               { icon: '⏳', label: 'Ouvrir plus tard' },
-            ].map((step, index) => (
-              <div key={index} className="flex flex-col items-center text-center">
+            ];
+
+            steps.map((step, index) => (
+              <div key={index} className={`flex flex-col items-center text-center rounded-xl shadow-md p-6 w-40 ${stepColors[index]}`}>
                 <div className="text-4xl">{step.icon}</div>
                 <p className="mt-2 font-semibold text-sky-800">{step.label}</p>
               </div>
