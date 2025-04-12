@@ -28,3 +28,15 @@
 .animate-fade-up {
   animation: fade-up 1s ease-out forwards;
 }
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 4s ease-in-out infinite;
+}
