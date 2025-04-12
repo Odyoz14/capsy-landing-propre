@@ -88,7 +88,6 @@ export default function App() {
                 <div className="text-4xl">{step.icon}</div>
                 <p className="mt-2 font-semibold text-sky-800">{step.label}</p>
               </div>
-            ))}
           </div>
         </section>
 
