@@ -125,7 +125,6 @@ export default function App() {
     </>
   )
 }
-import React, { useState } from 'react'
 
 export default function App() {
   const stepColors = ['bg-sky-100', 'bg-pink-100', 'bg-violet-100', 'bg-green-100', 'bg-yellow-100']
