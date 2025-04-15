@@ -20,8 +20,8 @@ export default function App() {
 
   return (
     <>
-      {/* Section Hero : affichage du titre et du slogan avec animations de background */}
-      <section className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-sky-200 to-white relative overflow-hidden">
+      {/* Section Hero réduite */}
+      <section className="h-[30vh] md:h-[25vh] flex flex-col items-center justify-center bg-gradient-to-b from-sky-200 to-white relative overflow-hidden">
         {/* Capsule flottante */}
         <img
           src="/capsule-floating.png"
@@ -63,17 +63,17 @@ export default function App() {
         </div>
 
         {/* Contenu du Hero */}
-        <h1 className="text-center text-8xl font-bold text-sky-700 animate-fade-up z-20">
+        <h1 className="text-center text-5xl md:text-8xl font-bold text-sky-700 animate-fade-up z-20">
           Capsy
         </h1>
-        <p className="mt-4 text-xl text-sky-600 z-20">
+        <p className="mt-2 md:mt-4 text-sm md:text-xl text-sky-600 z-20">
           Voyagez dans le temps avec vos souvenirs
         </p>
       </section>
 
       {/* Contenu supplémentaire de la page */}
       <div className="relative overflow-hidden bg-gradient-to-b from-sky-200 to-white flex flex-col items-center justify-start text-center pt-10 pb-10 px-4">
-        {/* SECTION ÉTAPES */}
+        {/* SECTION ÉTAPES (frise, etc.) */}
         <section className="w-full bg-transparent py-16 px-4 mt-6 z-20">
           <h2 className="text-3xl font-poetic text-sky-700 text-center mb-10 animate-fade-up">
             Comment fonctionne Capsy ?
