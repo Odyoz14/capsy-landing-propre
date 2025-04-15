@@ -19,9 +19,11 @@ export default function App() {
   }
 
   return (
-    <>
-      {/* Section Hero réduite */}
-      <section className="h-[30vh] md:h-[25vh] flex flex-col items-center justify-center bg-gradient-to-b from-sky-200 to-white relative overflow-hidden">
+    // Conteneur global avec un fond de même gradient sur toute la page
+    <div className="bg-gradient-to-b from-sky-200 to-white min-h-screen relative overflow-hidden">
+      
+      {/* Section Hero réduite en hauteur */}
+      <section className="h-[30vh] md:h-[25vh] flex flex-col items-center justify-center relative">
         {/* Capsule flottante */}
         <img
           src="/capsule-floating.png"
@@ -71,9 +73,9 @@ export default function App() {
         </p>
       </section>
 
-      {/* Contenu supplémentaire de la page */}
-      <div className="relative overflow-hidden bg-gradient-to-b from-sky-200 to-white flex flex-col items-center justify-start text-center pt-10 pb-10 px-4">
-        {/* SECTION ÉTAPES (frise, etc.) */}
+      {/* Reste du contenu de la page */}
+      <div className="flex flex-col items-center justify-start text-center pt-10 pb-10 px-4">
+        {/* SECTION ÉTAPES (ex : frise) */}
         <section className="w-full bg-transparent py-16 px-4 mt-6 z-20">
           <h2 className="text-3xl font-poetic text-sky-700 text-center mb-10 animate-fade-up">
             Comment fonctionne Capsy ?
@@ -122,6 +124,7 @@ export default function App() {
           )}
         </div>
       </div>
-    </>
+      
+    </div>
   )
 }
