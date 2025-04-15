@@ -9,10 +9,11 @@
     opacity: 1;
   }
   100% {
-    transform: translate(var(--dx), var(--dy)) rotate(var(--rot));
+    transform: translate(var(--dx), 0) rotate(var(--rot));
     opacity: 0;
   }
 }
+
 
 /* Animation nuages */
 @keyframes floatCloud {
