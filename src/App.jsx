@@ -22,24 +22,52 @@ export default function App() {
     // Conteneur global avec le même fond sur toute la page
     <div className="bg-gradient-to-b from-sky-200 to-white min-h-screen relative overflow-hidden">
       
-      {/* Capsules flottantes fixes (elles resteront en place lors du scroll) */}
-      {/* Première capsule déjà existante */}
-      <img
-        src="/capsule-floating.png"
-        alt="Capsule flottante"
-        className="hidden md:block fixed left-8 top-[40%] h-28 animate-floating z-10"
-      />
-      {/* Ajout d'autres capsules à des positions différentes */}
-      <img
-        src="/capsule-floating.png"
-        alt="Capsule flottante"
-        className="hidden md:block fixed right-10 top-[30%] h-24 animate-floating z-10"
-      />
-      <img
-        src="/capsule-floating.png"
-        alt="Capsule flottante"
-        className="hidden md:block fixed right-4 bottom-[20%] h-20 animate-floating z-10"
-      />
+      {/* Capsules flottantes avec fil */}
+      {/* Première capsule */}
+      <div className="hidden md:block fixed left-8 top-[40%] z-10">
+        <div className="relative">
+          {/* Fil reliant le haut de l'écran à la capsule (hauteur égale à 40vh car top-[40%] signifie environ 40vh) */}
+          <div
+            className="thread absolute top-0 left-1/2 transform -translate-x-1/2 bg-gray-300"
+            style={{ width: "1px", height: "40vh" }}
+          />
+          <img
+            src="/capsule-floating.png"
+            alt="Capsule flottante"
+            className="h-28 animate-floating"
+          />
+        </div>
+      </div>
+
+      {/* Deuxième capsule */}
+      <div className="hidden md:block fixed right-10 top-[30%] z-10">
+        <div className="relative">
+          <div
+            className="thread absolute top-0 left-1/2 transform -translate-x-1/2 bg-gray-300"
+            style={{ width: "1px", height: "30vh" }}
+          />
+          <img
+            src="/capsule-floating.png"
+            alt="Capsule flottante"
+            className="h-24 animate-floating"
+          />
+        </div>
+      </div>
+
+      {/* Troisième capsule */}
+      <div className="hidden md:block fixed right-4 top-[55%] z-10">
+        <div className="relative">
+          <div
+            className="thread absolute top-0 left-1/2 transform -translate-x-1/2 bg-gray-300"
+            style={{ width: "1px", height: "55vh" }}
+          />
+          <img
+            src="/capsule-floating.png"
+            alt="Capsule flottante"
+            className="h-20 animate-floating"
+          />
+        </div>
+      </div>
 
       {/* Section Hero réduite en hauteur */}
       <section className="h-[30vh] md:h-[25vh] flex flex-col items-center justify-center relative">
@@ -60,6 +88,8 @@ export default function App() {
             />
           ))}
         </div>
+
+        {/* (Ici, si vous souhaitez garder les étoiles filantes, elles s'afficheraient entre les animations, sinon vous pouvez les retirer) */}
 
         {/* Contenu du Hero */}
         <h1 className="text-center text-5xl md:text-8xl font-bold text-sky-700 animate-fade-up z-20">
