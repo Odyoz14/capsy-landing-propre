@@ -19,52 +19,51 @@ export default function App() {
   }
 
   return (
-    // Conteneur global avec le même fond sur toute la page
     <div className="bg-gradient-to-b from-sky-200 to-white min-h-screen relative overflow-hidden">
       
-      {/* Capsules flottantes avec fil */}
-      {/* Première capsule */}
-      <div className="hidden md:block fixed left-8 top-[40%] z-10">
-        <div className="relative">
-          {/* Fil reliant le haut de l'écran à la capsule (hauteur égale à 40vh car top-[40%] signifie environ 40vh) */}
+      {/* Capsule flottante 1 avec fil */}
+      <div className="hidden md:block fixed left-8 top-[40%] z-10 h-[40vh]">
+        <div className="relative h-full">
+          {/* Fil : il part du haut du conteneur et s'arrête avant la capsule */}
           <div
             className="thread absolute top-0 left-1/2 transform -translate-x-1/2 bg-gray-300"
-            style={{ width: "1px", height: "40vh" }}
+            style={{ width: "1px", bottom: "7rem" }}  // 7rem correspond à la hauteur de la capsule (h-28)
           />
+          {/* Capsule positionnée en bas du conteneur */}
           <img
             src="/capsule-floating.png"
             alt="Capsule flottante"
-            className="h-28 animate-floating"
+            className="absolute bottom-0 h-28 animate-floating z-20"
           />
         </div>
       </div>
 
-      {/* Deuxième capsule */}
-      <div className="hidden md:block fixed right-10 top-[30%] z-10">
-        <div className="relative">
+      {/* Capsule flottante 2 avec fil */}
+      <div className="hidden md:block fixed right-10 top-[30%] z-10 h-[30vh]">
+        <div className="relative h-full">
           <div
             className="thread absolute top-0 left-1/2 transform -translate-x-1/2 bg-gray-300"
-            style={{ width: "1px", height: "30vh" }}
+            style={{ width: "1px", bottom: "6rem" }}  // h-24 correspond à environ 6rem
           />
           <img
             src="/capsule-floating.png"
             alt="Capsule flottante"
-            className="h-24 animate-floating"
+            className="absolute bottom-0 h-24 animate-floating z-20"
           />
         </div>
       </div>
 
-      {/* Troisième capsule */}
-      <div className="hidden md:block fixed right-4 top-[55%] z-10">
-        <div className="relative">
+      {/* Capsule flottante 3 avec fil */}
+      <div className="hidden md:block fixed right-4 top-[55%] z-10 h-[55vh]">
+        <div className="relative h-full">
           <div
             className="thread absolute top-0 left-1/2 transform -translate-x-1/2 bg-gray-300"
-            style={{ width: "1px", height: "55vh" }}
+            style={{ width: "1px", bottom: "5rem" }}  // h-20 correspond à environ 5rem
           />
           <img
             src="/capsule-floating.png"
             alt="Capsule flottante"
-            className="h-20 animate-floating"
+            className="absolute bottom-0 h-20 animate-floating z-20"
           />
         </div>
       </div>
@@ -89,8 +88,6 @@ export default function App() {
           ))}
         </div>
 
-        {/* (Ici, si vous souhaitez garder les étoiles filantes, elles s'afficheraient entre les animations, sinon vous pouvez les retirer) */}
-
         {/* Contenu du Hero */}
         <h1 className="text-center text-5xl md:text-8xl font-bold text-sky-700 animate-fade-up z-20">
           Capsy
@@ -102,7 +99,6 @@ export default function App() {
 
       {/* Reste du contenu de la page */}
       <div className="flex flex-col items-center justify-start text-center pt-10 pb-10 px-4">
-        {/* SECTION ÉTAPES (par exemple, la frise) */}
         <section className="w-full bg-transparent py-16 px-4 mt-6 z-20">
           <h2 className="text-3xl font-poetic text-sky-700 text-center mb-10 animate-fade-up">
             Comment fonctionne Capsy ?
@@ -125,7 +121,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* Formulaire d'inscription */}
         <div className="w-full max-w-md bg-white/30 backdrop-blur-md shadow-lg rounded-xl p-6 mt-16 z-20">
           {submitted ? (
             <p className="text-green-600 font-semibold">
