@@ -62,26 +62,40 @@ export default function App() {
         </div>
 
         {/* Étoiles filantes */}
-   <div className="falling-stars fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden z-10">
+  <div className="falling-stars fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden z-10">
   {[...Array(30)].map((_, i) => {
-    const initialLeft = Math.random() * 100; // position horizontale initiale
-    const finalDx = (Math.random() < 0.5 ? -1 : 1) * (Math.random() * 100 + 50); // déplacement horizontal aléatoire
-    const duration = 2 + Math.random() * 3; // durée aléatoire entre 2 et 5 secondes
-    const delay = Math.random() * 5; // délai aléatoire
+    // Position initiale aléatoire sur l'axe horizontal (en %)
+    const initialLeft = Math.random() * 100;
+    // Déplacement horizontal en pixels : valeur négative pour aller à gauche, positive pour aller à droite.
+    // On choisit une plage suffisamment large pour que l’étoile sorte de l’écran.
+    const finalDx = (Math.random() < 0.5 ? -1 : 1) * (Math.random() * 150 + 100);
+    // Déplacement vertical en vh (entre 20vh et 50vh par exemple)
+    const finalDy = `${Math.random() * 30 + 20}vh`;
+    // Définir la rotation initiale en fonction du sens horizontal:
+    // Si finalDx > 0 (vers la droite), alors 45deg, sinon -45deg.
+    const rotation = finalDx > 0 ? '45deg' : '-45deg';
+    // Durée rapide pour traverser l'écran (par exemple entre 0.8s et 1.5s)
+    const duration = 0.8 + Math.random() * 0.7;
+    // Petit délai aléatoire
+    const delay = Math.random() * 1;
+    
     return (
       <span
         key={i}
         className="star absolute w-[2px] h-[20px] bg-white opacity-50"
         style={{
-          top: `-5%`, // commence juste au-dessus de l'écran
+          top: `-5%`, // démarre légèrement au-dessus de l'écran
           left: `${initialLeft}%`,
-          '--dx': `${finalDx}px`, // variable utilisée dans l'animation
-          animation: `fallStar ${duration}s linear ${delay}s infinite`,
+          '--dx': `${finalDx}px`,
+          '--dy': finalDy,
+          '--rot': rotation,
+          animation: `fallStar ${duration}s linear ${delay}s infinite`
         }}
       />
     );
   })}
 </div>
+
 
 
 
