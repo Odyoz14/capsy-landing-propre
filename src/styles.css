@@ -49,3 +49,14 @@
 .animate-floating {
   animation: floating 4s ease-in-out infinite;
 }
+
+@keyframes fallStar {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    /* Les étoiles se déplacent de --dx pixels horizontalement et atteignent le bas de l'écran (110vh pour être sûr qu'elles disparaissent) */
+    transform: translate(var(--dx), 110vh) rotate(45deg);
+    opacity: 0;
+  }
