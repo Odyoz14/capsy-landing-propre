@@ -2,18 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Animation étoiles filantes avec déplacement horizontal seulement */
-@keyframes fallStar {
-  0% {
-    transform: translate(0, 0) rotate(var(--rot));
-    opacity: 1;
-  }
-  100% {
-    transform: translate(var(--dx), 0) rotate(var(--rot));
-    opacity: 0;
-  }
-}
-
 /* Animation nuages */
 @keyframes floatCloud {
   0% { transform: translateX(0px); }
