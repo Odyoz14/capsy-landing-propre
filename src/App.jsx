@@ -19,61 +19,59 @@ export default function App() {
   }
 
   return (
-    <div className="relative bg-gradient-to-b from-sky-200 to-white min-h-screen overflow-hidden">
+    // Conteneur global avec le même fond sur toute la page
+    <div className="bg-gradient-to-b from-sky-200 to-white min-h-screen relative overflow-hidden">
       
-      {/* Conteneur global pour les capsules flottantes (elles apparaîtront sur tout l'écran) */}
-      <div className="floating-capsules fixed inset-0 pointer-events-none z-10">
-        {/* Exemple Capsule 1 */}
-        <div className="absolute" style={{ left: '10%', top: '40%' }}>
-          <div className="relative" style={{ height: '40vh' }}>
-            {/* Le fil, qui part du haut du conteneur et s'arrête juste avant la capsule */}
-            <div
-              className="thread absolute top-0 left-1/2 transform -translate-x-1/2 bg-gray-300"
-              style={{ width: '1px', bottom: '7rem' }}  // Ajustez la valeur "7rem" selon la hauteur de votre capsule
-            />
-            {/* La capsule, positionnée en bas du conteneur */}
-            <img
-              src="/capsule-floating.png"
-              alt="Capsule flottante"
-              className="absolute bottom-0 h-28 animate-floating z-20"
-            />
-          </div>
-        </div>
-        
-        {/* Exemple Capsule 2 */}
-        <div className="absolute" style={{ right: '10%', top: '30%' }}>
-          <div className="relative" style={{ height: '30vh' }}>
-            <div
-              className="thread absolute top-0 left-1/2 transform -translate-x-1/2 bg-gray-300"
-              style={{ width: '1px', bottom: '6rem' }}  // Pour capsule de h-24 (environ 6rem)
-            />
-            <img
-              src="/capsule-floating.png"
-              alt="Capsule flottante"
-              className="absolute bottom-0 h-24 animate-floating z-20"
-            />
-          </div>
-        </div>
-        
-        {/* Exemple Capsule 3 */}
-        <div className="absolute" style={{ right: '4%', top: '55%' }}>
-          <div className="relative" style={{ height: '55vh' }}>
-            <div
-              className="thread absolute top-0 left-1/2 transform -translate-x-1/2 bg-gray-300"
-              style={{ width: '1px', bottom: '5rem' }}  // Pour capsule de h-20 (environ 5rem)
-            />
-            <img
-              src="/capsule-floating.png"
-              alt="Capsule flottante"
-              className="absolute bottom-0 h-20 animate-floating z-20"
-            />
-          </div>
+      {/* Capsules flottantes avec fil */}
+      {/* Première capsule */}
+      <div className="hidden md:block fixed left-8 top-[40%] z-10">
+        <div className="relative">
+          {/* Fil reliant le haut de l'écran à la capsule (hauteur égale à 40vh car top-[40%] signifie environ 40vh) */}
+          <div
+            className="thread absolute top-0 left-1/2 transform -translate-x-1/2 bg-gray-300"
+            style={{ width: "1px", height: "40vh" }}
+          />
+          <img
+            src="/capsule-floating.png"
+            alt="Capsule flottante"
+            className="h-28 animate-floating"
+          />
         </div>
       </div>
-      
-      {/* SECTION HERO */}
-      <section className="h-[30vh] md:h-[25vh] flex flex-col items-center justify-center relative z-20">
-        {/* Nuages flottants, etc. (vous pouvez les conserver ici) */}
+
+      {/* Deuxième capsule */}
+      <div className="hidden md:block fixed right-10 top-[30%] z-10">
+        <div className="relative">
+          <div
+            className="thread absolute top-0 left-1/2 transform -translate-x-1/2 bg-gray-300"
+            style={{ width: "1px", height: "30vh" }}
+          />
+          <img
+            src="/capsule-floating.png"
+            alt="Capsule flottante"
+            className="h-24 animate-floating"
+          />
+        </div>
+      </div>
+
+      {/* Troisième capsule */}
+      <div className="hidden md:block fixed right-4 top-[55%] z-10">
+        <div className="relative">
+          <div
+            className="thread absolute top-0 left-1/2 transform -translate-x-1/2 bg-gray-300"
+            style={{ width: "1px", height: "55vh" }}
+          />
+          <img
+            src="/capsule-floating.png"
+            alt="Capsule flottante"
+            className="h-20 animate-floating"
+          />
+        </div>
+      </div>
+
+      {/* Section Hero réduite en hauteur */}
+      <section className="h-[30vh] md:h-[25vh] flex flex-col items-center justify-center relative">
+        {/* Nuages flottants */}
         <div className="floating-clouds fixed top-0 left-0 w-full h-full pointer-events-none z-0">
           {[...Array(4)].map((_, i) => (
             <div
@@ -90,21 +88,22 @@ export default function App() {
             />
           ))}
         </div>
-        
+
+        {/* (Ici, si vous souhaitez garder les étoiles filantes, elles s'afficheraient entre les animations, sinon vous pouvez les retirer) */}
+
         {/* Contenu du Hero */}
-        <div className="text-center z-20">
-          <h1 className="text-5xl md:text-8xl font-bold text-sky-700 animate-fade-up">
-            Capsy
-          </h1>
-          <p className="mt-2 md:mt-4 text-sm md:text-xl text-sky-600">
-            Voyagez dans le temps avec vos souvenirs
-          </p>
-        </div>
+        <h1 className="text-center text-5xl md:text-8xl font-bold text-sky-700 animate-fade-up z-20">
+          Capsy
+        </h1>
+        <p className="mt-2 md:mt-4 text-sm md:text-xl text-sky-600 z-20">
+          Voyagez dans le temps avec vos souvenirs
+        </p>
       </section>
-      
+
       {/* Reste du contenu de la page */}
-      <div className="flex flex-col items-center justify-start text-center pt-10 pb-10 px-4 z-20">
-        <section className="w-full bg-transparent py-16 px-4 mt-6">
+      <div className="flex flex-col items-center justify-start text-center pt-10 pb-10 px-4">
+        {/* SECTION ÉTAPES (par exemple, la frise) */}
+        <section className="w-full bg-transparent py-16 px-4 mt-6 z-20">
           <h2 className="text-3xl font-poetic text-sky-700 text-center mb-10 animate-fade-up">
             Comment fonctionne Capsy ?
           </h2>
@@ -125,8 +124,9 @@ export default function App() {
             ))}
           </div>
         </section>
-        
-        <div className="w-full max-w-md bg-white/30 backdrop-blur-md shadow-lg rounded-xl p-6 mt-16">
+
+        {/* Formulaire d'inscription */}
+        <div className="w-full max-w-md bg-white/30 backdrop-blur-md shadow-lg rounded-xl p-6 mt-16 z-20">
           {submitted ? (
             <p className="text-green-600 font-semibold">
               Merci ! Vous serez prévenu au lancement 🎉
@@ -151,6 +151,7 @@ export default function App() {
           )}
         </div>
       </div>
+      
     </div>
   )
 }
