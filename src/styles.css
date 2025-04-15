@@ -2,16 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Animation étoiles filantes */
-@keyframes fall {
-  0% { transform: translateY(-100px); opacity: 0; }
-  10% { opacity: 1; }
-  100% { transform: translateY(110vh); opacity: 0; }
+/* Animation étoiles filantes avec déplacement horizontal (nouveau) */
+@keyframes fallStar {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--dx), 110vh) rotate(45deg);
+    opacity: 0;
+  }
 }
 
 .animate-fall {
-  animation: fall 3s linear infinite;
+  animation: fallStar 3s linear infinite;
 }
+
 
 /* Animation nuages */
 @keyframes floatCloud {
@@ -49,14 +55,3 @@
 .animate-floating {
   animation: floating 4s ease-in-out infinite;
 }
-
-@keyframes fallStar {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    /* Les étoiles se déplacent de --dx pixels horizontalement et atteignent le bas de l'écran (110vh pour être sûr qu'elles disparaissent) */
-    transform: translate(var(--dx), 110vh) rotate(45deg);
-    opacity: 0;
-  }
