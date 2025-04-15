@@ -61,25 +61,27 @@ export default function App() {
           ))}
         </div>
 
-        {/* Étoiles filantes */}
-  <div className="falling-stars fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden z-10">
+ {/* Étoiles filantes */}
+<div className="falling-stars fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden z-10">
   {[...Array(30)].map((_, i) => {
-    const initialLeft = Math.random() * 100; // position horizontale de départ en pourcentage
-    // finalDx définit un déplacement horizontal (en pixels) pour faire sortir l'étoile par la gauche ou la droite.
-    const finalDx = (Math.random() < 0.5 ? -1 : 1) * (Math.random() * 150 + 100);
-    // Durée allongée (par exemple, entre 3.5s et 5s) pour ralentir le parcours.
-    const duration = 3.5 + Math.random() * 1.5;
-    // Délai aléatoire (entre 0 et 2 secondes).
+    // Position horizontale de départ (en %)
+    const initialLeft = Math.random() * 100;
+    // Déplacement horizontal en pixels pour faire sortir l'étoile par la gauche ou la droite.
+    // On choisit une plage entre environ 150px et 300px.
+    const finalDx = (Math.random() < 0.5 ? -1 : 1) * (Math.random() * 150 + 150);
+    // Durée rallongée pour ralentir la traversée (entre 4.5s et 6s).
+    const duration = 4.5 + Math.random() * 1.5;
+    // Délai aléatoire (entre 0 et 2 secondes) pour varier le lancement.
     const delay = Math.random() * 2;
-    // L'orientation sera 90° pour la droite, -90° pour la gauche.
+    // L'orientation initiale (rotation) : 90° si déplacement vers la droite, -90° si vers la gauche.
     const rotation = finalDx > 0 ? '90deg' : '-90deg';
     
     return (
       <span
         key={i}
-        className="star absolute w-[2px] h-[20px] bg-white opacity-50"
+        className="star absolute w-[3px] h-[3px] bg-white"
         style={{
-          top: `-5%`, // démarre juste au-dessus de l'écran
+          top: '0%', // démarre exactement en haut du viewport
           left: `${initialLeft}%`,
           '--dx': `${finalDx}px`,
           '--rot': rotation,
@@ -89,6 +91,7 @@ export default function App() {
     );
   })}
 </div>
+
 
 
 
