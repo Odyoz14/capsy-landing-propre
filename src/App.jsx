@@ -19,18 +19,30 @@ export default function App() {
   }
 
   return (
-    // Conteneur global avec un fond de même gradient sur toute la page
+    // Conteneur global avec le même fond sur toute la page
     <div className="bg-gradient-to-b from-sky-200 to-white min-h-screen relative overflow-hidden">
       
+      {/* Capsules flottantes fixes (elles resteront en place lors du scroll) */}
+      {/* Première capsule déjà existante */}
+      <img
+        src="/capsule-floating.png"
+        alt="Capsule flottante"
+        className="hidden md:block fixed left-8 top-[40%] h-28 animate-floating z-10"
+      />
+      {/* Ajout d'autres capsules à des positions différentes */}
+      <img
+        src="/capsule-floating.png"
+        alt="Capsule flottante"
+        className="hidden md:block fixed right-10 top-[30%] h-24 animate-floating z-10"
+      />
+      <img
+        src="/capsule-floating.png"
+        alt="Capsule flottante"
+        className="hidden md:block fixed right-4 bottom-[20%] h-20 animate-floating z-10"
+      />
+
       {/* Section Hero réduite en hauteur */}
       <section className="h-[30vh] md:h-[25vh] flex flex-col items-center justify-center relative">
-        {/* Capsule flottante */}
-        <img
-          src="/capsule-floating.png"
-          alt="Capsule flottante"
-          className="hidden md:block fixed left-8 top-[40%] h-28 animate-floating z-10"
-        />
-
         {/* Nuages flottants */}
         <div className="floating-clouds fixed top-0 left-0 w-full h-full pointer-events-none z-0">
           {[...Array(4)].map((_, i) => (
@@ -75,7 +87,7 @@ export default function App() {
 
       {/* Reste du contenu de la page */}
       <div className="flex flex-col items-center justify-start text-center pt-10 pb-10 px-4">
-        {/* SECTION ÉTAPES (ex : frise) */}
+        {/* SECTION ÉTAPES (par exemple, la frise) */}
         <section className="w-full bg-transparent py-16 px-4 mt-6 z-20">
           <h2 className="text-3xl font-poetic text-sky-700 text-center mb-10 animate-fade-up">
             Comment fonctionne Capsy ?
