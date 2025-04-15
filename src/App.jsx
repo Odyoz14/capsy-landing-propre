@@ -20,12 +20,53 @@ export default function App() {
 
   return (
     <>
-      {/* Section Hero : affichage du titre et du slogan */}
-      <section className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-sky-200 to-white relative">
-        <h1 className="text-center text-8xl font-bold text-sky-700 animate-fade-up">
+      {/* Section Hero : affichage du titre et du slogan avec animations de background */}
+      <section className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-sky-200 to-white relative overflow-hidden">
+        {/* Capsule flottante */}
+        <img
+          src="/capsule-floating.png"
+          alt="Capsule flottante"
+          className="hidden md:block fixed left-8 top-[40%] h-28 animate-floating z-10"
+        />
+
+        {/* Nuages flottants */}
+        <div className="floating-clouds fixed top-0 left-0 w-full h-full pointer-events-none z-0">
+          {[...Array(4)].map((_, i) => (
+            <div
+              key={i}
+              className="cloud absolute bg-white opacity-30 rounded-full"
+              style={{
+                width: `${100 + i * 40}px`,
+                height: `${60 + i * 20}px`,
+                top: `${10 + i * 20}%`,
+                left: `-${100 + i * 60}px`,
+                animation: `floatCloud ${20 + i * 10}s linear infinite`,
+                filter: 'blur(12px)',
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Étoiles filantes */}
+        <div className="falling-stars fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden z-10">
+          {[...Array(30)].map((_, i) => (
+            <span
+              key={i}
+              className="star absolute w-[2px] h-[20px] bg-white opacity-50 animate-fall"
+              style={{
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${2 + Math.random() * 3}s`,
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Contenu du Hero */}
+        <h1 className="text-center text-8xl font-bold text-sky-700 animate-fade-up z-20">
           Capsy
         </h1>
-        <p className="mt-4 text-xl text-sky-600">
+        <p className="mt-4 text-xl text-sky-600 z-20">
           Voyagez dans le temps avec vos souvenirs
         </p>
       </section>
