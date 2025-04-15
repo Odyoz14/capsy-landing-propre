@@ -62,27 +62,27 @@ export default function App() {
         </div>
 
         {/* Étoiles filantes */}
-       <div className="falling-stars fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden z-10">
+   <div className="falling-stars fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden z-10">
   {[...Array(30)].map((_, i) => {
-    const initialLeft = Math.random() * 100; // position aléatoire en pourcentage sur l'axe horizontal
-    // Détermine un déplacement horizontal aléatoire en pixels : négatif pour aller à gauche, positif pour aller à droite
-    const finalDx = (Math.random() < 0.5 ? -1 : 1) * (Math.random() * 100 + 50);
+    const initialLeft = Math.random() * 100; // position horizontale initiale
+    const finalDx = (Math.random() < 0.5 ? -1 : 1) * (Math.random() * 100 + 50); // déplacement horizontal aléatoire
     const duration = 2 + Math.random() * 3; // durée aléatoire entre 2 et 5 secondes
-    const delay = Math.random() * 5; // délai aléatoire pour décaler le départ de l'animation
+    const delay = Math.random() * 5; // délai aléatoire
     return (
       <span
         key={i}
         className="star absolute w-[2px] h-[20px] bg-white opacity-50"
         style={{
-          top: `-5%`, // position initiale légèrement au-dessus de l'écran
+          top: `-5%`, // commence juste au-dessus de l'écran
           left: `${initialLeft}%`,
-          '--dx': `${finalDx}px`, // définit la variable custom --dx pour le déplacement horizontal
+          '--dx': `${finalDx}px`, // variable utilisée dans l'animation
           animation: `fallStar ${duration}s linear ${delay}s infinite`,
         }}
       />
     );
   })}
 </div>
+
 
 
         {/* Contenu du Hero */}
