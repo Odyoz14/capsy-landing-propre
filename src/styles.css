@@ -5,19 +5,14 @@
 /* Animation étoiles filantes avec déplacement horizontal (nouveau) */
 @keyframes fallStar {
   0% {
-    transform: translate(0, 0) rotate(0deg);
+    transform: translate(0, 0) rotate(var(--rot));
     opacity: 1;
   }
   100% {
-    transform: translate(var(--dx), 110vh) rotate(45deg);
+    transform: translate(var(--dx), var(--dy)) rotate(var(--rot));
     opacity: 0;
   }
 }
-
-.animate-fall {
-  animation: fallStar 3s linear infinite;
-}
-
 
 /* Animation nuages */
 @keyframes floatCloud {
