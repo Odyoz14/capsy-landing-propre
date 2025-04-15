@@ -61,20 +61,21 @@ export default function App() {
           ))}
         </div>
 
- {/* Étoiles filantes */}
+{/* Étoiles filantes */}
 <div className="falling-stars fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden z-10">
   {[...Array(30)].map((_, i) => {
-    // Position horizontale de départ (en %)
+    // Position initiale aléatoire (en %)
     const initialLeft = Math.random() * 100;
-    // Déplacement horizontal en pixels pour faire sortir l'étoile par la gauche ou la droite.
-    // On choisit une plage entre environ 150px et 300px.
-    const finalDx = (Math.random() < 0.5 ? -1 : 1) * (Math.random() * 150 + 150);
-    // Durée rallongée pour ralentir la traversée (entre 4.5s et 6s).
+    // Déplacement horizontal final en vw :
+    // On choisit une valeur comprise entre 50vw et 100vw avec signe négatif ou positif.
+    const finalDxVal = (Math.random() < 0.5 ? -1 : 1) * (Math.random() * 50 + 50);
+    // Durée rallongée pour ralentir le mouvement (entre 4.5s et 6s).
     const duration = 4.5 + Math.random() * 1.5;
-    // Délai aléatoire (entre 0 et 2 secondes) pour varier le lancement.
+    // Délai aléatoire (entre 0 et 2s)
     const delay = Math.random() * 2;
-    // L'orientation initiale (rotation) : 90° si déplacement vers la droite, -90° si vers la gauche.
-    const rotation = finalDx > 0 ? '90deg' : '-90deg';
+    // Pour que l'étoile soit déjà orientée dans la direction du mouvement,
+    // on définit la rotation initiale : 90° pour la droite, -90° pour la gauche.
+    const rotation = finalDxVal > 0 ? '90deg' : '-90deg';
     
     return (
       <span
@@ -83,14 +84,15 @@ export default function App() {
         style={{
           top: '0%', // démarre exactement en haut du viewport
           left: `${initialLeft}%`,
-          '--dx': `${finalDx}px`,
+          '--dx': `${finalDxVal}vw`, // déplacement en vw
           '--rot': rotation,
-          animation: `fallStar ${duration}s linear ${delay}s infinite`,
+          animation: `fallStar ${duration}s linear ${delay}s infinite`
         }}
       />
     );
   })}
 </div>
+
 
 
 
